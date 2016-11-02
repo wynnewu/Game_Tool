@@ -110,13 +110,10 @@ int main(int argc, char **argv)
 		}
 	}
 
-
-
-
 	distanceCalculate(valueArr);
 
 
-	/*//CPPUNIT_ASSERT(distanceCalculate(valueArr)==5.5);
+	//CPPUNIT_ASSERT(distanceCalculate(valueArr)==5.5);
 
 	//CPPUNIT_ASSERT(distanceCalculate(valueArr) == 7.8613);
 
@@ -131,8 +128,7 @@ int main(int argc, char **argv)
 	bool wasSucessful = runner.run();
 
 	return wasSucessful ? 0 : 1;
-	*/
-
+	
 }
 
 
