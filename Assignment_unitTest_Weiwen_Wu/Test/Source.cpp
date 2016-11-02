@@ -12,20 +12,7 @@
 #include <cppunit/extensions/HelperMacros.h>
 
 using namespace std;
-double distanceCalculate(string arr[40][3]) {
-
-	double valueArr[40][3];
-
-	for (int i = 0; i < 40; i++)
-	{
-		for (int j = 0; j < 3; j++) {
-			valueArr[i][j] = atof(arr[i][j].c_str());
-			cout << valueArr[i][j] << " ";
-
-		}
-		cout << endl;
-	}
-
+double distanceCalculate(double valueArr[40][3]) {
 
 	double minDis = 0;
 	double currentDis = 0;
@@ -38,7 +25,6 @@ double distanceCalculate(string arr[40][3]) {
 	{
 
 		currentDis = sqrt(pow(valueArr[i][0] - valueArr[i + 1][0], 2) + pow(valueArr[i][1] - valueArr[i + 1][1], 2) + pow(valueArr[i][2] - valueArr[i + 1][2], 2));
-		cout << "Distance: " << currentDis << endl;
 
 
 		if (currentDis < temp)
@@ -49,27 +35,22 @@ double distanceCalculate(string arr[40][3]) {
 		}
 
 	}
-	cout << endl << "Min Distance" << temp << endl;
-	cout << endl << index1 << " " << index2 << endl;
-
-
+	
 	double newArr[40][3];
 	for (int i = 0; i < 40; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			newArr[index1][j] = 0;
-			newArr[index2][j] = 0;
+			newArr[index1][j] = NULL;
+			newArr[index2][j] = NULL;
 
 			if (i != index1&&i != index2)
 			{
 				newArr[i][j] = valueArr[i][j];
-
-				cout << newArr[i][j] << "  ";
 			}
 
 		}
-		cout << endl;
+	
 	}
 
 	
@@ -89,6 +70,7 @@ double distanceCalculate(string arr[40][3]) {
 		myfile << endl;
 	}
 
+
 	return temp;
 
 }
@@ -99,6 +81,7 @@ int main(int argc, char **argv)
 		cout << "Argument:" << i + 1 << "On the Command Line" << argv[i] << endl;
 	}
 
+	//ifstream infile(argv[1]);
 
 	ifstream infile("abc.txt");
 	string num[40][3];
@@ -117,12 +100,25 @@ int main(int argc, char **argv)
 
 	}
 
-	distanceCalculate(num);
+	double valueArr[40][3];
+
+	for (int i = 0; i < 40; i++)
+	{
+		for (int j = 0; j < 3; j++) {
+			valueArr[i][j] = atof(num[i][j].c_str());
+
+		}
+	}
 
 
-	CPPUNIT_ASSERT(distanceCalculate(num)==0);
 
-	CPPUNIT_ASSERT(distanceCalculate(num) == 7.8613);
+
+	distanceCalculate(valueArr);
+
+
+	CPPUNIT_ASSERT(distanceCalculate(valueArr)==5.5);
+
+	CPPUNIT_ASSERT(distanceCalculate(valueArr) == 7.8613);
 
 	CPPUNIT_NS::Test *suite = CPPUNIT_NS::TestFactoryRegistry::getRegistry().makeTest();
 	CppUnit::TextUi::TestRunner runner;

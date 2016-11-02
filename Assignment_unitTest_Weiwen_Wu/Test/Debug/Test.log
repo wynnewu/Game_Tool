@@ -1,2 +1,3 @@
 ﻿  Source.cpp
-  Test.vcxproj -> E:\Game Tool\Assignment_unitTest_Weiwen_Wu\Test\Debug\Test.exe
+LINK : fatal error LNK1168: cannot open F:\Git\Game_Tool\Assignment_unitTest_Weiwen_Wu\Test\Debug\Test.exe for writing
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(638,5): error MSB6003: The specified task executable "link.exe" could not be run. The process cannot access the file 'F:\Git\Game_Tool\Assignment_unitTest_Weiwen_Wu\Test\Debug\Test.tlog\link.command.1.tlog' because it is being used by another process.
