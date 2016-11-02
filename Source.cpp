@@ -117,7 +117,7 @@ int main(int argc, char **argv)
 
 	//CPPUNIT_ASSERT(distanceCalculate(valueArr) == 7.8613);
 
-	/*CPPUNIT_NS::Test *suite = CPPUNIT_NS::TestFactoryRegistry::getRegistry().makeTest();
+	CPPUNIT_NS::Test *suite = CPPUNIT_NS::TestFactoryRegistry::getRegistry().makeTest();
 	CppUnit::TextUi::TestRunner runner;
 
 	std::ofstream fs("Result.txt");
@@ -128,7 +128,7 @@ int main(int argc, char **argv)
 	bool wasSucessful = runner.run();
 
 	return wasSucessful ? 0 : 1;
-	*/
+	
 }
 
 
