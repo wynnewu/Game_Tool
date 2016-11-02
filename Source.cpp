@@ -6,7 +6,7 @@
 #include <algorithm> 
 #include <math.h> 
 
-#include <cppunit/extensions/TestFactoryRegistry.h>
+//#include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
 #include<cppunit/XmlOutputter.h>
 #include <cppunit/extensions/HelperMacros.h>
